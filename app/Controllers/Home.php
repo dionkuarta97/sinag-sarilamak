@@ -42,6 +42,13 @@ class Home extends BaseController
 			'jml_air_putih' => $this->HomeModel->get_air_putih(),
 			'jml_buluh_kasok' => $this->HomeModel->get_buluh_kasok(),
 
+			'agama_islam' => $this->HomeModel->get_agama_islam(),
+			'agama_protestan' => $this->HomeModel->get_agama_protestan(),
+			'agama_katolik' => $this->HomeModel->get_agama_katolik(),
+			'agama_hindu' => $this->HomeModel->get_agama_hindu(),
+			'agama_buddha' => $this->HomeModel->get_agama_buddha(),
+			'agama_konghucu' => $this->HomeModel->get_agama_konghucu(),
+
 		];
 		echo view('layout/v_wrapper', $data);
 	}
@@ -812,6 +819,74 @@ class Home extends BaseController
 		$spreadsheet->getActiveSheet()->setTitle("Data buluh_kasok");
 		header('Content-Type: application/vnd.ms-excel');
 		header('Content-Disposition: attachment;filename="Data_buluh_kasok.Xlsx"');
+		header('Cache-Control: max-age=0');
+
+		$writer = new Xlsx($spreadsheet);
+
+		$writer->save('php://output');
+
+		exit;
+	}
+
+	public function agama_islam()
+	{
+		$data = [
+			'tittle' => 'Penduduk Agama Islam',
+			'db_mstr' => $this->HomeModel->get_agama_islam_p(),
+			'isi' => 'Agama/v_islam',
+
+		];
+		echo view('layout/v_wrapper', $data);
+	}
+
+	public function excel_islam()
+	{
+		$data['db_mstr'] =  $this->HomeModel->get_agama_islam_p();
+
+
+		$spreadsheet = new Spreadsheet;
+
+		$spreadsheet->getProperties()->setCreator("Dion Kuarta");
+		$spreadsheet->getProperties()->setLastModifiedBy("Dion Kuarta");
+
+		$spreadsheet->getProperties()->setTitle("Data Agama Islam");
+		$spreadsheet->getActiveSheetIndex(0);
+
+
+
+		$spreadsheet->getActiveSheet()->setCellValue('A1', 'NO');
+		$spreadsheet->getActiveSheet()->setCellValue('B1', 'NIK');
+		$spreadsheet->getActiveSheet()->setCellValue('C1', 'NKK');
+		$spreadsheet->getActiveSheet()->setCellValue('D1', 'NAMA');
+		$spreadsheet->getActiveSheet()->setCellValue('E1', 'TANGGAL LAHIR');
+		$spreadsheet->getActiveSheet()->setCellValue('F1', 'UMUR');
+		$spreadsheet->getActiveSheet()->setCellValue('G1', 'AGAMA');
+		$spreadsheet->getActiveSheet()->setCellValue('H1', 'JENIS KELAMIN');
+		$spreadsheet->getActiveSheet()->setCellValue('I1', 'PEKERJAAN');
+
+		$baris = 2;
+		$no = 1;
+
+		foreach ($data['db_mstr'] as $mstr) {
+
+			$spreadsheet->getActiveSheet()->setCellValue('A' . $baris, $no++);
+			$spreadsheet->getActiveSheet()->setCellValueExplicit('B' . $baris, $mstr['nik'], \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
+			$spreadsheet->getActiveSheet()->setCellValueExplicit('C' . $baris, $mstr['nkk'], \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
+			$spreadsheet->getActiveSheet()->setCellValue('D' . $baris, $mstr['nama']);
+			$spreadsheet->getActiveSheet()->setCellValue('E' . $baris, tanggal_indo($mstr['tgl_lahir']));
+			$spreadsheet->getActiveSheet()->setCellValue('F' . $baris, hitung_umur($mstr['tgl_lahir']));
+			$spreadsheet->getActiveSheet()->setCellValue('G' . $baris, $mstr['agama']);
+			$spreadsheet->getActiveSheet()->setCellValue('H' . $baris, $mstr['jekel']);
+			$spreadsheet->getActiveSheet()->setCellValue('I' . $baris, $mstr['pekerjaan']);
+
+			$baris++;
+		}
+
+
+
+		$spreadsheet->getActiveSheet()->setTitle("Data Agama Islam");
+		header('Content-Type: application/vnd.ms-excel');
+		header('Content-Disposition: attachment;filename="Data_agama_islam.Xlsx"');
 		header('Cache-Control: max-age=0');
 
 		$writer = new Xlsx($spreadsheet);

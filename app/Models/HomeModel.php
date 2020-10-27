@@ -259,4 +259,114 @@ class HomeModel extends Model
 
             ->get()->getResultArray();
     }
+
+
+
+    public function get_agama_islam()
+    {
+        return $this->db->table('db_mstr')
+            ->where('db_mstr.agama', 'islam')
+            ->whereIn('db_mstr.stts_hidup', ['Ada', 'Masuk', 'Lahir'])
+
+            ->countAllResults();
+    }
+
+    public function get_agama_islam_p()
+    {
+        return $this->db->table('db_mstr')
+            ->where('db_mstr.agama', 'islam')
+            ->whereIn('db_mstr.stts_hidup', ['Ada', 'Masuk', 'Lahir'])
+
+            ->get()->getResultArray();
+    }
+
+    public function get_agama_protestan()
+    {
+        return $this->db->table('db_mstr')
+            ->where('db_mstr.agama', 'protestan')
+            ->whereIn('db_mstr.stts_hidup', ['Ada', 'Masuk', 'Lahir'])
+
+            ->countAllResults();
+    }
+
+    public function get_agama_protestan_p()
+    {
+        return $this->db->table('db_mstr')
+            ->where('db_mstr.agama', 'protestan')
+            ->whereIn('db_mstr.stts_hidup', ['Ada', 'Masuk', 'Lahir'])
+
+            ->get()->getResultArray();
+    }
+
+    public function get_agama_katolik()
+    {
+        return $this->db->table('db_mstr')
+            ->where('db_mstr.agama', 'katolik')
+            ->whereIn('db_mstr.stts_hidup', ['Ada', 'Masuk', 'Lahir'])
+
+            ->countAllResults();
+    }
+
+    public function get_agama_katolik_p()
+    {
+        return $this->db->table('db_mstr')
+            ->where('db_mstr.agama', 'katolik')
+            ->whereIn('db_mstr.stts_hidup', ['Ada', 'Masuk', 'Lahir'])
+
+            ->get()->getResultArray();
+    }
+
+    public function get_agama_hindu()
+    {
+        return $this->db->table('db_mstr')
+            ->where('db_mstr.agama', 'hindu')
+            ->whereIn('db_mstr.stts_hidup', ['Ada', 'Masuk', 'Lahir'])
+
+            ->countAllResults();
+    }
+
+    public function get_agama_hindu_p()
+    {
+        return $this->db->table('db_mstr')
+            ->where('db_mstr.agama', 'hindu')
+            ->whereIn('db_mstr.stts_hidup', ['Ada', 'Masuk', 'Lahir'])
+
+            ->get()->getResultArray();
+    }
+
+    public function get_agama_buddha()
+    {
+        return $this->db->table('db_mstr')
+            ->where('db_mstr.agama', 'buddha')
+            ->whereIn('db_mstr.stts_hidup', ['Ada', 'Masuk', 'Lahir'])
+
+            ->countAllResults();
+    }
+
+    public function get_agama_buddha_p()
+    {
+        return $this->db->table('db_mstr')
+            ->where('db_mstr.agama', 'buddha')
+            ->whereIn('db_mstr.stts_hidup', ['Ada', 'Masuk', 'Lahir'])
+
+            ->get()->getResultArray();
+    }
+
+    public function get_agama_konghucu()
+    {
+        return $this->db->table('db_mstr')
+            ->where('db_mstr.agama', 'kong hu cu')
+            ->whereIn('db_mstr.stts_hidup', ['Ada', 'Masuk', 'Lahir'])
+
+            ->countAllResults();
+    }
+
+    public function get_agama_konghucu_p()
+    {
+        return $this->db->table('db_mstr')
+            ->where('db_mstr.agama', 'kong hu cu')
+            ->whereIn('db_mstr.stts_hidup', ['Ada', 'Masuk', 'Lahir'])
+
+            ->get()->getResultArray();
+    }
 }

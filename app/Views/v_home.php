@@ -229,12 +229,12 @@
             <!-- Small boxes (Stat box) -->
             <div class="col-12 col-sm-6 col-md-3">
                 <div class="info-box">
-                    <span class="info-box-icon bg-info elevation-1"><i class="fas fa-users"></i></span>
+                    <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-mosque"></i></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text"><a type="button" href="Home/jml_sarilamak">ISLAM</a></span>
+                        <span class="info-box-text"><a type="button" href="Home/agama_islam">ISLAM</a></span>
                         <span class="info-box-number">
-                            <?= $jml_sarilamak; ?>
+                            <?= $agama_islam; ?>
                         </span>
                     </div>
                     <!-- /.info-box-content -->
@@ -243,12 +243,12 @@
             </div>
             <div class="col-12 col-sm-6 col-md-3">
                 <div class="info-box">
-                    <span class="info-box-icon bg-info elevation-1"><i class="fas fa-users"></i></span>
+                    <span class="info-box-icon bg-secondary elevation-1"><i class="fas fa-church"></i></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text"><a type="button" href="Home/jml_purwajaya">PROTESTAN</a></span>
+                        <span class="info-box-text"><a type="button" href="Home/agama_protestan">PROTESTAN</a></span>
                         <span class="info-box-number">
-                            <?= $jml_purwajaya; ?>
+                            <?= $agama_protestan; ?>
                         </span>
                     </div>
                     <!-- /.info-box-content -->
@@ -257,12 +257,12 @@
             </div>
             <div class="col-12 col-sm-6 col-md-3">
                 <div class="info-box">
-                    <span class="info-box-icon bg-info elevation-1"><i class="fas fa-users"></i></span>
+                    <span class="info-box-icon bg-success elevation-1"><i class="fas fa-bible"></i></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text"><a type="button" href="Home/jml_ketinggian">KATOLIK</a></span>
+                        <span class="info-box-text"><a type="button" href="Home/agama_katolik">KATOLIK</a></span>
                         <span class="info-box-number">
-                            <?= $jml_ketinggian; ?>
+                            <?= $agama_katolik; ?>
                         </span>
                     </div>
                     <!-- /.info-box-content -->
@@ -271,12 +271,12 @@
             </div>
             <div class="col-12 col-sm-6 col-md-3">
                 <div class="info-box">
-                    <span class="info-box-icon bg-info elevation-1"><i class="fas fa-users"></i></span>
+                    <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-gopuram"></i></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text"><a type="button" href="Home/jml_air_putih">HINDU</a></span>
+                        <span class="info-box-text"><a type="button" href="Home/agama_hindu">HINDU</a></span>
                         <span class="info-box-number">
-                            <?= $jml_air_putih; ?>
+                            <?= $agama_hindu; ?>
                         </span>
                     </div>
                     <!-- /.info-box-content -->
@@ -286,12 +286,12 @@
 
             <div class="col-12 col-sm-6 col-md-3">
                 <div class="info-box">
-                    <span class="info-box-icon bg-info elevation-1"><i class="fas fa-users"></i></span>
+                    <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-vihara"></i></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text"><a type="button" href="Home/jml_buluh_kasok">BUDDHA</a></span>
+                        <span class="info-box-text"><a type="button" href="Home/agama_buddha">BUDDHA</a></span>
                         <span class="info-box-number">
-                            <?= $jml_buluh_kasok; ?>
+                            <?= $agama_buddha; ?>
                         </span>
                     </div>
                     <!-- /.info-box-content -->
@@ -300,12 +300,12 @@
             </div>
             <div class="col-12 col-sm-6 col-md-3">
                 <div class="info-box">
-                    <span class="info-box-icon bg-info elevation-1"><i class="fas fa-users"></i></span>
+                    <span class="info-box-icon bg-dark elevation-1"><i class="fas fa-torii-gate"></i></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text"><a type="button" href="Home/jml_buluh_kasok">KONG HU CU</a></span>
+                        <span class="info-box-text"><a type="button" href="Home/agama_konghucu">KONG HU CU</a></span>
                         <span class="info-box-number">
-                            <?= $jml_buluh_kasok; ?>
+                            <?= $agama_konghucu; ?>
                         </span>
                     </div>
                     <!-- /.info-box-content -->
