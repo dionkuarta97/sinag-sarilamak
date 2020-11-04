@@ -20,7 +20,7 @@
 
 
 <div class="card-body">
-    <table id="example1" class="table table-bordered table-striped">
+    <table id="tabelmaster" class="table table-bordered table-striped">
         <thead>
             <tr>
                 <th>No</th>
@@ -39,28 +39,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <?php $no = 1;
-                foreach ($db_mstr as $key => $value) { ?>
 
-
-                    <td> <?= $no++; ?> </td>
-                    <td>
-                        <a href="/Datamaster/delete/<?= $value['id_mstr']; ?>" onclick="return confirm('Yakin....?')" class="btn btn-danger btn-xs"><i class="fas fa-trash fa-xs"></i></a>
-                        <a href="/Datamaster/detail/<?= $value['id_mstr']; ?>" class="btn btn-info btn-xs"><i class="fas fa-eye fa-xs"></i></a>
-
-                    </td>
-                    <td><?= $value['nik']; ?></td>
-                    <td><?= $value['nkk']; ?></td>
-                    <td><?= $value['nama']; ?></td>
-                    <td><?= tanggal_indo($value['tgl_lahir']); ?></td>
-                    <td><?= hitung_umur($value['tgl_lahir']); ?></td>
-                    <td><?= $value['agama']; ?></td>
-                    <td><?= $value['jekel']; ?></td>
-                    <td><?= $value['pekerjaan']; ?></td>
-
-            </tr>
-        <?php } ?>
         </tbody>
     </table>
 </div>
@@ -100,10 +79,14 @@
                             <input type="text" name="tmp_lahir" id="tmp_lahir" class="form-control" placeholder="Masukkan Tempat Lahir">
 
                         </div>
-                        <div class="form-group nb-0">
+                        <div class="form-group">
                             <label for="tgl_lahir"></label>
-                            <input type="text" name="tgl_lahir" id="tgl_lahir" class="form-control" placeholder="Masukkan Tanggal Lahir (YYYY-MM-DD)">
-
+                            <div class="input-group date" id="reservationdate" data-target-input="nearest">
+                                <input type="text" class="form-control datetimepicker-input" name="tgl_lahir" placeholder="Masukkan Tanggal Lahir" data-target="#reservationdate" data-date-format='yy-mm-dd' />
+                                <div class="input-group-prepend" data-target="#reservationdate" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group nb-0">
                             <label for="kenagarian"></label>

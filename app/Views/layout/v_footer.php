@@ -42,8 +42,7 @@
 <!-- Sparkline -->
 <script src="<?= base_url() ?>/template/plugins/sparklines/sparkline.js"></script>
 <!-- JQVMap -->
-<script src="<?= base_url() ?>/template/plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="<?= base_url() ?>/template/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<script src="<?= base_url() ?>/template/plugins/select2/js/select2.full.min.js"></script>
 <!-- jQuery Knob Chart -->
 <script src="<?= base_url() ?>/template/plugins/jquery-knob/jquery.knob.min.js"></script>
 <!-- daterangepicker -->
@@ -67,9 +66,354 @@
 <script src="<?= base_url() ?>/template/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
 <script src="<?= base_url() ?>/template/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 <!-- page script -->
+
+
+
+
+
+
+
+
+
+
+
+
 <script>
     $(function() {
-        $("#example1").DataTable({
+
+
+        $('#reservationdate').datetimepicker({
+            // dateFormat: 'dd-mm-yy',
+            format: 'YYYY-MM-DD',
+            minDate: getFormattedDate(new Date())
+        });
+
+        function getFormattedDate(date) {
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getYear().toString().slice(2);
+            return day + '-' + month + '-' + year;
+        }
+
+        $('.select2').select2()
+
+
+
+
+
+        $('#tabelmaster').DataTable({
+            "order": [],
+            "responsive": true,
+            "autoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "<?= site_url('Datamaster/jquery_master'); ?>",
+                "type": "POST"
+            }
+        });
+        $('#tabelkk').DataTable({
+            "order": [],
+            "responsive": true,
+            "autoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "<?= site_url('Datakk/jquery_master'); ?>",
+                "type": "POST"
+            }
+        });
+        $('#tabellaki').DataTable({
+            "order": [],
+            "responsive": true,
+            "autoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "<?= site_url('Home/jquery_master_laki'); ?>",
+                "type": "POST"
+            }
+        });
+        $('#tabelperempuan').DataTable({
+            "order": [],
+            "responsive": true,
+            "autoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "<?= site_url('Home/jquery_master_perempuan'); ?>",
+                "type": "POST"
+            }
+        });
+
+        $('#tabelkksarilamak').DataTable({
+            "order": [],
+            "responsive": true,
+            "autoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "<?= site_url('Home/jquery_master_kk_sarilamak'); ?>",
+                "type": "POST"
+            }
+        });
+
+        $('#tabelkkpurwajaya').DataTable({
+            "order": [],
+            "responsive": true,
+            "autoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "<?= site_url('Home/jquery_master_kk_purwajaya'); ?>",
+                "type": "POST"
+            }
+        });
+
+
+        $('#tabelkkketinggian').DataTable({
+            "order": [],
+            "responsive": true,
+            "autoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "<?= site_url('Home/jquery_master_kk_ketinggian'); ?>",
+                "type": "POST"
+            }
+        });
+
+        $('#tabelkkair_putih').DataTable({
+            "order": [],
+            "responsive": true,
+            "autoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "<?= site_url('Home/jquery_master_kk_air_putih'); ?>",
+                "type": "POST"
+            }
+        });
+
+
+        $('#tabelkkbuluh_kasok').DataTable({
+            "order": [],
+            "responsive": true,
+            "autoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "<?= site_url('Home/jquery_master_kk_buluh_kasok'); ?>",
+                "type": "POST"
+            }
+        });
+
+        $('#tabelsarilamak').DataTable({
+            "order": [],
+            "responsive": true,
+            "autoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "<?= site_url('Home/jquery_master_sarilamak'); ?>",
+                "type": "POST"
+            }
+        });
+
+        $('#tabelpurwajaya').DataTable({
+            "order": [],
+            "responsive": true,
+            "autoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "<?= site_url('Home/jquery_master_purwajaya'); ?>",
+                "type": "POST"
+            }
+        });
+
+        $('#tabelketinggian').DataTable({
+            "order": [],
+            "responsive": true,
+            "autoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "<?= site_url('Home/jquery_master_ketinggian'); ?>",
+                "type": "POST"
+            }
+        });
+
+        $('#tabelair_putih').DataTable({
+            "order": [],
+            "responsive": true,
+            "autoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "<?= site_url('Home/jquery_master_air_putih'); ?>",
+                "type": "POST"
+            }
+        });
+
+        $('#tabelbuluh_kasok').DataTable({
+            "order": [],
+            "responsive": true,
+            "autoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "<?= site_url('Home/jquery_master_buluh_kasok'); ?>",
+                "type": "POST"
+            }
+        });
+
+        $('#tabelislam').DataTable({
+            "order": [],
+            "responsive": true,
+            "autoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "<?= site_url('Home/jquery_master_islam'); ?>",
+                "type": "POST"
+            }
+        });
+
+        $('#tabelprotestan').DataTable({
+            "order": [],
+            "responsive": true,
+            "autoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "<?= site_url('Home/jquery_master_protestan'); ?>",
+                "type": "POST"
+            }
+        });
+
+        $('#tabelkatolik').DataTable({
+            "order": [],
+            "responsive": true,
+            "autoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "<?= site_url('Home/jquery_master_katolik'); ?>",
+                "type": "POST"
+            }
+        });
+
+        $('#tabelhindu').DataTable({
+            "order": [],
+            "responsive": true,
+            "autoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "<?= site_url('Home/jquery_master_hindu'); ?>",
+                "type": "POST"
+            }
+        });
+
+        $('#tabelbuddha').DataTable({
+            "order": [],
+            "responsive": true,
+            "autoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "<?= site_url('Home/jquery_master_buddha'); ?>",
+                "type": "POST"
+            }
+        });
+
+        $('#tabelkonghucu').DataTable({
+            "order": [],
+            "responsive": true,
+            "autoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "<?= site_url('Home/jquery_master_konghucu'); ?>",
+                "type": "POST"
+            }
+        });
+
+        $('#tabelstunting').DataTable({
+            "order": [],
+            "responsive": true,
+            "autoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "<?= site_url('Home/jquery_master_stunting'); ?>",
+                "type": "POST"
+            }
+        });
+
+        $('#tabelbalita').DataTable({
+            "order": [],
+            "responsive": true,
+            "autoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "<?= site_url('Home/jquery_master_balita'); ?>",
+                "type": "POST"
+            }
+        });
+
+        $('#tabelanak_anak').DataTable({
+            "order": [],
+            "responsive": true,
+            "autoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "<?= site_url('Home/jquery_master_anak_anak'); ?>",
+                "type": "POST"
+            }
+        });
+
+        $('#tabelremaja').DataTable({
+            "order": [],
+            "responsive": true,
+            "autoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "<?= site_url('Home/jquery_master_remaja'); ?>",
+                "type": "POST"
+            }
+        });
+
+        $('#tabeldewasa').DataTable({
+            "order": [],
+            "responsive": true,
+            "autoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "<?= site_url('Home/jquery_master_dewasa'); ?>",
+                "type": "POST"
+            }
+        });
+
+        $('#tabellansia').DataTable({
+            "order": [],
+            "responsive": true,
+            "autoWidth": false,
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "<?= site_url('Home/jquery_master_lansia'); ?>",
+                "type": "POST"
+            }
+        });
+
+
+        $('#example1').DataTable({
             "responsive": true,
             "autoWidth": false,
         });
@@ -82,6 +426,7 @@
             "autoWidth": false,
             "responsive": true,
         });
+
     });
 </script>
 </body>

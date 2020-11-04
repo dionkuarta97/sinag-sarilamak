@@ -21,11 +21,40 @@ class Datakk extends BaseController
 
         $data = [
             'tittle' => 'Kartu Keluarga',
-            'db_kk' => $this->KkModel->get_kk(),
             'isi' => 'Datapenduduk/v_kk',
 
         ];
         echo view('layout/v_wrapper', $data);
+    }
+
+    public function jquery_master()
+    {
+        $listing = $this->KkModel->get_datatables();
+        $jumlah_semua = $this->KkModel->count_all();
+        $jumlah_filter = $this->KkModel->count_filtered();
+
+
+        $data = array();
+        $no = @$_POST['start'];
+
+        foreach ($listing as $key) {
+            $no++;
+            $row = array();
+            $row[] = $no;
+            $row[] = '<a href="' . site_url('Datakk/detail/' . $key->nkk) . '" class="btn btn-info btn-xs"><i class="fas fa-eye fa-xs"></i></a>';
+            $row[] = $key->nkk;
+            $row[] = $key->nama;
+            $row[] = $key->hubungan;
+            $data[] = $row;
+        }
+        $output = array(
+            "draw" => @$_POST['draw'],
+            "recordsFiltered" => $jumlah_filter->jml,
+            "recordsTotal" => $jumlah_semua->jml,
+            "data" => $data,
+        );
+        // output to json format
+        echo json_encode($output);
     }
     public function detail($nkk)
     {

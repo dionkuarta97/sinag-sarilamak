@@ -1,11 +1,11 @@
-<a class="btn btn-danger" href="excel_laki">Download <i class="fa fa-file-excel"></i></a>
+<a class="btn btn-danger" href="excel_islam">Download <i class="fa fa-file-excel"></i></a>
 <br><br>
 <div class="card-body">
-    <table id="tabellaki" class="table table-bordered table-striped">
+    <table id="tabelcontoh" class="table table-bordered table-striped">
         <thead>
             <tr>
                 <th>No</th>
-
+                <th>aksi</th>
                 <th>NIK</th>
                 <th>NKK</th>
                 <th>Nama</th>
@@ -20,7 +20,7 @@
             </tr>
         </thead>
         <tbody>
-
+            <tr></tr>
         </tbody>
     </table>
 </div>

@@ -69,7 +69,7 @@
             <!-- Small boxes (Stat box) -->
             <div class="col-12 col-sm-6 col-md-3">
                 <div class="info-box">
-                    <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-home"></i></span>
+                    <span class="info-box-icon bg-info elevation-1"><i class="fas fa-home"></i></span>
 
                     <div class="info-box-content">
                         <span class="info-box-text"><a type="button" href="Home/jml_kk_sarilamak">Jorong Sarilamak</a></span>
@@ -83,7 +83,7 @@
             </div>
             <div class="col-12 col-sm-6 col-md-3">
                 <div class="info-box">
-                    <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-home"></i></span>
+                    <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-home"></i></span>
 
                     <div class="info-box-content">
                         <span class="info-box-text"><a type="button" href="Home/jml_kk_purwajaya">Jorong Purwajaya</a></span>
@@ -111,7 +111,7 @@
             </div>
             <div class="col-12 col-sm-6 col-md-3">
                 <div class="info-box">
-                    <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-home"></i></span>
+                    <span class="info-box-icon bg-success elevation-1"><i class="fas fa-home"></i></span>
 
                     <div class="info-box-content">
                         <span class="info-box-text"><a type="button" href="Home/jml_kk_air_putih">Jorong Air Putih</a></span>
@@ -126,7 +126,7 @@
 
             <div class="col-12 col-sm-6 col-md-3">
                 <div class="info-box">
-                    <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-home"></i></span>
+                    <span class="info-box-icon bg-dark elevation-1"><i class="fas fa-home"></i></span>
 
                     <div class="info-box-content">
                         <span class="info-box-text"><a type="button" href="Home/jml_kk_buluh_kasok">Jorong Buluh Kasok</a></span>
@@ -163,7 +163,7 @@
             </div>
             <div class="col-12 col-sm-6 col-md-3">
                 <div class="info-box">
-                    <span class="info-box-icon bg-info elevation-1"><i class="fas fa-users"></i></span>
+                    <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
 
                     <div class="info-box-content">
                         <span class="info-box-text"><a type="button" href="Home/jml_purwajaya">Jorong Purwajaya</a></span>
@@ -177,7 +177,7 @@
             </div>
             <div class="col-12 col-sm-6 col-md-3">
                 <div class="info-box">
-                    <span class="info-box-icon bg-info elevation-1"><i class="fas fa-users"></i></span>
+                    <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-users"></i></span>
 
                     <div class="info-box-content">
                         <span class="info-box-text"><a type="button" href="Home/jml_ketinggian">Jorong Ketinggian</a></span>
@@ -191,7 +191,7 @@
             </div>
             <div class="col-12 col-sm-6 col-md-3">
                 <div class="info-box">
-                    <span class="info-box-icon bg-info elevation-1"><i class="fas fa-users"></i></span>
+                    <span class="info-box-icon bg-success elevation-1"><i class="fas fa-users"></i></span>
 
                     <div class="info-box-content">
                         <span class="info-box-text"><a type="button" href="Home/jml_air_putih">Jorong Air Putih</a></span>
@@ -206,7 +206,7 @@
 
             <div class="col-12 col-sm-6 col-md-3">
                 <div class="info-box">
-                    <span class="info-box-icon bg-info elevation-1"><i class="fas fa-users"></i></span>
+                    <span class="info-box-icon bg-dark elevation-1"><i class="fas fa-users"></i></span>
 
                     <div class="info-box-content">
                         <span class="info-box-text"><a type="button" href="Home/jml_buluh_kasok">Jorong Buluh Kasok</a></span>
@@ -312,6 +312,104 @@
                 </div>
 
             </div>
+        </div>
+    </div>
+</section>
+<br>
+
+<h3>Berdasarkan Usia</h3>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Small boxes (Stat box) -->
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box">
+                    <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-baby"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text"><a type="button" href="Home/stunting">STUNTING</a></span>
+                        <span class="info-box-number">
+                            <?= $stunting; ?>
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box">
+                    <span class="info-box-icon bg-secondary elevation-1"><i class="fas fa-child"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text"><a type="button" href="Home/balita">BALITA</a></span>
+                        <span class="info-box-number">
+                            <?= $balita; ?>
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+
+            </div>
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box">
+                    <span class="info-box-icon bg-success elevation-1"><i class="fas fa-child"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text"><a type="button" href="Home/anak_anak">ANAK-ANAK</a></span>
+                        <span class="info-box-number">
+                            <?= $anak_anak; ?>
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box">
+                    <span class="info-box-icon bg-dark elevation-1"><i class="fas fa-child"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text"><a type="button" href="Home/remaja">REMAJA</a></span>
+                        <span class="info-box-number">
+                            <?= $remaja; ?>
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box">
+                    <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-user-graduate"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text"><a type="button" href="Home/dewasa">DEWASA</a></span>
+                        <span class="info-box-number">
+                            <?= $dewasa; ?>
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="info-box">
+                    <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-user"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text"><a type="button" href="Home/lansia">LANSIA</a></span>
+                        <span class="info-box-number">
+                            <?= $lansia; ?>
+                        </span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+
+            </div>
+
         </div>
     </div>
 </section>

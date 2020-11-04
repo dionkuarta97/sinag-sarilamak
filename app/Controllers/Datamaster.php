@@ -7,12 +7,19 @@ namespace App\Controllers;
 use CodeIgniter\Controller;
 
 use App\Models\MstrModel;
+use App\Models\MasterModel;
+use Config\Services;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
 
+ini_set('max_execution_time', 0);
+ini_set('memory_limit', '2048M');
+
 class Datamaster extends BaseController
 {
+
+
 
     protected $MstrModel;
     public function __construct()
@@ -25,11 +32,46 @@ class Datamaster extends BaseController
 
         $data = [
             'tittle' => 'Data Master',
-            'db_mstr' => $this->MstrModel->get_mstr(),
+
             'isi' => 'Datapenduduk/v_mstr',
 
         ];
         echo view('layout/v_wrapper', $data);
+    }
+
+    public function jquery_master()
+    {
+        $listing = $this->MstrModel->get_datatables();
+        $jumlah_semua = $this->MstrModel->count_all();
+        $jumlah_filter = $this->MstrModel->count_filtered();
+
+        $data = array();
+        $no = @$_POST['start'];
+
+        foreach ($listing as $key) {
+            $no++;
+            $row = array();
+            $row[] = $no;
+            $row[] = '<a href="' . site_url('Datamaster/delete/' . $key->id_mstr) . '" onclick="return confirm(\'Yakin....?\')" class="btn btn-danger btn-xs"><i class="fas fa-trash fa-xs"></i></a>
+            <a href="' . site_url('Datamaster/detail/' . $key->id_mstr) . '" class="btn btn-info btn-xs"><i class="fas fa-eye fa-xs"></i></a>';
+            $row[] = $key->nik;
+            $row[] = $key->nkk;
+            $row[] = $key->nama;
+            $row[] = tanggal_indo($key->tgl_lahir);
+            $row[] = hitung_umur($key->tgl_lahir);
+            $row[] = $key->agama;
+            $row[] = $key->jekel;
+            $row[] = $key->pekerjaan;
+            $data[] = $row;
+        }
+        $output = array(
+            "draw" => @$_POST['draw'],
+            "recordsFiltered" => $jumlah_filter->jml,
+            "recordsTotal" => $jumlah_semua->jml,
+            "data" => $data,
+        );
+        // output to json format
+        echo json_encode($output);
     }
 
     public function detail($id_mstr)
@@ -251,12 +293,5 @@ class Datamaster extends BaseController
         $writer->save('php://output');
 
         exit;
-    }
-
-
-    public function suket_meninggal()
-    {
-
-        echo view('Surat/suketmeninggal');
     }
 }
